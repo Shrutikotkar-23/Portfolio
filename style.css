@@ -1,0 +1,483 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Be Vietnam Pro" , sans-serif;
+    height:vh;
+}
+
+.wrapper{
+    height: 100vh;
+    overflow-x : hidden;
+    overflow-y: auto;
+}
+
+.container{
+    width:1000px ; 
+    margin :0 auto;
+}
+
+.navbar{
+    display : flex;
+    justify-content : space-between;
+    align-items: center;
+    
+    padding-top: 2rem ;    /*2*/
+    padding-left: 4rem;
+
+}
+.logo-container{
+    display :flex;
+    justify-content: baseline;
+    align-items: center;
+    padding-left: 4rem;
+    
+
+}
+.logo{
+    width : 40px;
+    height :50px;
+
+}
+.logo-text{
+    font-size: 28px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+   
+ }
+.nav-items{
+    display: flex;
+    gap: 2rem;
+    padding: 0 4rem;/* 8 */
+    font-size: 20px;
+    font-weight: 500px;
+    cursor: pointer ;
+}
+
+a{
+    text-decoration: none;
+
+}
+.nav-items a{
+    color: black;
+}
+.nav-items div:hover{
+    font-weight: bold;
+    transition: 0.8s;
+}
+.hero-section{
+    position :relative;
+    display: flex;
+    justify-content: center ;
+    align-items:center ;
+
+    gap : 10rem; 
+    margin :4rem auto;
+    padding : 0 0;
+    padding-bottom :4rem;
+    
+
+}
+.mypic{
+    height: 350px;
+    width: 200px;
+
+}
+.faded-image{
+    font-size: 4em;
+    user-select: none;
+    color: rgb(231,231,231);
+    position: absolute;
+
+    bottom :-20%;
+    left :-1%;
+    font-weight: bold; 
+    transition: all 3s;
+    padding-left: 6rem;
+   
+
+}
+.hero-section-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding-left: 0;
+
+}
+.heading{
+    font-size: 35px;
+    color: #424d83;
+    font-weight: 500;
+}
+.sub-heading{
+     font-size: 45px;
+     font-weight: 45px;
+
+}
+.role{
+    color:#57b5e1;
+    font-weight: 700;
+
+}
+.description{
+    margin-top:1rem;
+    width :70%;
+    font-weight:500;
+}
+.button{
+    background-color: rgb(224, 79, 103);
+    width:fit-content;
+    color: white;
+    padding: 0.8rem 2.3rem;
+    box-shadow: 5px 5px 7px 8px #0000003f;
+    font-size: 18 px;
+    cursor:pointer;
+    transition:all 0.5s;
+    font-weight: 500;
+    border: solid 3px transparent;
+    position: relative;
+    z-index: 1;
+}
+.button::before{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: 0px;
+    left:0;
+    right: 0;
+    bottom:0px;
+    z-index:-1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+}
+
+.button:hover::before{
+    transform :scaleX(1);
+}
+.button:hover{
+    border :solid 3px rgb(224, 79, 103);
+    color: black;
+}
+.hero-section-right{
+    position: relative;
+}
+
+.mypic{
+    padding : 1.5rem;
+    filter:grayscale(1);
+    transition: all 1s;
+    animation: scaleimage 5s linear infinite;       
+}
+@keyframes scaleimage {
+
+    0%{
+        filter: grayscale(0);
+        transform: scale(1);
+
+    }
+
+    50%{
+        transform: scale(1.1);
+        filter: grayscale(1);
+        box-shadow: 3px 3px 10px black;
+
+    }
+
+    100%{
+        transform: scale(1);
+        filter: grayscale(0);
+
+    }
+}
+.project-section{
+    background-color: rgb(231,231,231);
+    margin-top : 4rem;
+}
+.page-heading{
+    font-size: 3em;
+    text-align: center; 
+    padding-top: 2rem;
+    
+    color: rgb(164, 68, 91);
+}
+.project-container{
+    max-width: 1000px;
+    margin :0 auto;
+    padding:3rem 0;
+
+    display: flex;
+    flex-direction: column ;
+    gap:130px;
+    padding-left: 8rem;
+}
+.project-card{
+    width: 90%;
+    height: 450px;
+    background-image: url(./images/project\ 1.jpg);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+
+    
+}
+
+.project-card::after{
+    content:"";
+    position:absolute;
+    /*to cover whole image*/
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+
+    background-color: #1f1f1fc3;
+    /* transform: scaleX(1); */
+    z-index:0;
+}
+.project-card::before{
+    content :"";
+    position: absolute;
+
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+
+    background: linear-gradient(45deg , #141a32f1, #283058be, #11152896);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.4s;
+    z-index:1;
+
+}
+.project-card:hover::before{
+    transform: scaleX(1);
+
+}
+.project-num{
+    position: absolute;
+    font-size: 140px;
+    font-weight: 545;
+    color: white;
+    z-index:10;
+    /* display:none; */
+    opacity: 0;
+}
+.project-card:hover .project-num{
+    /* display: block; */
+    opacity: 1;
+}
+.project-num-right{
+    right :-40px;
+    top:-45px;
+}
+.project-num-left{
+    left:-40px;
+    top:-45px;
+}
+.project-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    padding: 2em;
+    bottom: 20%;
+    z-index: 5;
+    gap : 1em; 
+    transition: all 0.4s;
+}
+.project-content-left{
+    left :50px;
+
+}
+.project-content-right{
+    left :320px;
+
+}
+
+.project-skills-container{
+    width:60%;
+    display:flex;
+    gap:10px;
+    flex-wrap: wrap;
+    
+}
+.project-skill{
+    width:50px;
+    height:50px;
+}
+.heading-proj{
+    font-size:50px;
+    font-weight:bold;
+    line-height:3rem;
+}
+
+.project-subhed{
+    width:70%;
+    font-size:16px;
+    font-style: italic;
+
+}
+.btn-grp{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.btn-proj:hover{
+    border:none;
+
+}
+.icon{
+    cursor :pointer;
+    color:white;
+    font-size:35px;
+    transition: all 0.4s;
+}
+.icon:hover{
+    color:rgb(224, 79, 103);
+
+}
+.project-card:hover .project-content{
+    transform: scale(1.1);
+}
+
+#project-no1{
+    
+    background-image: url(./images/project\ 1.jpg);
+
+}
+#project-no2{ 
+    margin-left: 90px;
+    background-image: url(./images/project\ 1.jpg);
+
+}
+#project-no3{
+    background-image: url(./images/project\ 1.jpg);
+
+}
+#project-no4{
+    margin-left: 90px;
+    background-image: url(./images/project\ 1.jpg);
+    
+}
+.skills-container{
+    position: relative;
+    display: flex;
+    padding: 4rem;
+    margin: 8rem auto;
+    margin-top: 4rem;
+    gap:35px;
+}
+.skill-container-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+}
+.skill-container-right{
+    display: flex;
+    flex-wrap: wrap;
+    width:50%;
+
+    position: relative;
+    gap:2rem;
+    justify-content: center;
+
+}
+.skill-fade-text{
+    position: absolute;
+    font-size: 10rem;
+    font-style: bold; 
+    color: rgb(231,231,231);
+    bottom :-24.5%;
+    right: -8.6%;
+    user-select: none;
+}
+.blob-style{
+    position: absolute;
+    top:20%;
+    left:20%;
+    z-index:-5; 
+    opacity: 30%;
+    /* transform: ; */
+    animation : blobannimation 3s linear infinite;
+}
+@keyframes blobannimation  {
+    50%{
+        top: 34%;
+        left:36%;
+    }
+}
+.skills-logo{
+    width:80px;
+    height:80px;
+    transition: all 0.4s;
+}
+.skills-logo:hover{
+     transform: scale(1.2);
+}
+.skill-heading{
+    font-size: 50px;
+    font-style: bold;
+    color: rgb(176, 29, 115);
+}
+.caps{
+    font-size: 85px;
+}
+.skill-conent{
+     margin-top: 1rem;
+     width: 75%;
+     text-align: justify;
+
+}
+.skill-conent p{
+    margin-top:15px ;
+}
+.footer{
+    
+    position: relative;
+    margin-top:0px;
+    padding:5rem;
+    background-color: rgb(14, 84, 141);
+
+}
+.footer-wrapper{
+    display:flex;
+    gap :1rem;
+    padding :1.2rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.footer-faded-text{
+    position: absolute;
+    left:0;
+    bottom:0;
+    color:  rgba(231, 231, 231, 0.454);
+    user-select: none;
+    font-size: 4.5em;
+}
+.link-wrappers{
+    margin-left:400px;
+    display: flex;
+    gap:1.1rem;
+
+}
+.link-wrappers div a{
+    color: #fff;
+    text-decoration: none;
+    transition:  all 0.6s;
+} 
+.link-wrappers div a:hover{
+    text-decoration: none;
+    color: rgb(224, 79, 103);
+
+}
+.icon-wrappers{
+    display: flex; 
+    gap:1rem;
+
+}
